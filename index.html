@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DU 工作整合工具箱 V4</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Excel 匯出套件 -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <h1>DU 工作整合工具箱 V4</h1>
+
+    <div class="top-actions">
+      <button id="exportExcelBtn">匯出 Excel</button>
+      <button id="clearAllBtn" class="danger">清空資料</button>
+    </div>
+  </header>
+
+  <main class="page-grid">
+
+    <!-- 報價區 -->
+    <section class="card">
+      <h2>報價計算器</h2>
+
+      <div class="form-grid">
+
+        <div>
+          <label>客戶類型</label>
+          <select id="clientType">
+            <option value="single">散客</option>
+            <option value="group">團購</option>
+          </select>
+        </div>
+
+        <div>
+          <label>每才單價</label>
+          <input type="number" id="unitPrice" value="200">
+        </div>
+
+      </div>
+
+      <div id="quoteItems"></div>
+
+      <button id="addQuoteItemBtn">＋ 新增尺寸</button>
+
+      <div class="summary-box">
+        <div>總才數：<span id="quoteTotalTai">0</span></div>
+        <div>總金額：<span id="quoteTotalPrice">0</span></div>
+      </div>
+
+      <button id="generateQuoteBtn" class="primary">產生報價文字</button>
+
+      <textarea id="quoteResult" readonly></textarea>
+    </section>
+
+
+    <!-- 生產回報 -->
+    <section class="card">
+      <h2>生產回報</h2>
+</html>
